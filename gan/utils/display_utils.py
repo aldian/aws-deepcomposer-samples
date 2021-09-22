@@ -21,7 +21,7 @@ import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 import moviepy.editor as mpy
 import music21
-from IPython.display import Video
+from IPython.core.display import Video
 from IPython import display
 import seaborn as sns
     
@@ -179,4 +179,3 @@ def make_training_video(folder_dir):
     clip = mpy.concatenate_videoclips(frames, method="compose")
     clip.write_videofile("movie.mp4",fps=15) 
     return Video("movie.mp4")
-    
