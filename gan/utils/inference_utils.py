@@ -13,6 +13,7 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+import os
 import tensorflow as tf
 import numpy as np
 
@@ -20,10 +21,10 @@ from utils import path_utils, midi_utils, display_utils
 
 # --- local samples------------------------------------------------------------------
 
-def load_melody_samples(n_sample=10):    
+def load_melody_samples(n_sample=10, path_prefix='.'):
     """Load the samples used for evaluation."""
     
-    sample_source_path = './dataset/eval.npy'
+    sample_source_path = os.path.join(path_prefix, 'dataset', 'eval.npy')
     
     data = np.load(sample_source_path)
     data = np.asarray(data, dtype=np.float32) # {-1, 1}
